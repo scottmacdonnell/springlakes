@@ -1,0 +1,243 @@
+@import '../../breakpoints';
+
+// ? Baron Neue
+@font-face {
+  font-family: 'baronneue';
+  src: url('/fonts/baronneue/baronneue-black-webfont.woff2') format('woff2'),
+       url('/fonts/baronneue/baronneue-black-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+} // Black
+
+@font-face {
+  font-family: 'baronneue';
+  src: url('/fonts/baronneue/baronneue-blackitalic-webfont.woff2') format('woff2'),
+       url('/fonts/baronneue/baronneue-blackitalic-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+} // Black Italic
+
+@font-face {
+  font-family: 'baronneue';
+  src: url('/fonts/baronneue/baronneue-bold-webfont.woff2') format('woff2'),
+       url('/fonts/baronneue/baronneue-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+} // Bold
+
+@font-face {
+  font-family: 'baronneue';
+  src: url('/fonts/baronneue/baronneue-bolditalic-webfont.woff2') format('woff2'),
+       url('/fonts/baronneue/baronneue-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+} // Bold Italic
+
+@font-face {
+  font-family: 'baronneue';
+  src: url('/fonts/baronneue/baronneue-italic-webfont.woff2') format('woff2'),
+       url('/fonts/baronneue/baronneue-italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+} // Regular Italic
+
+@font-face {
+  font-family: 'baronneue';
+  src: url('/fonts/baronneue/baronneue-regular-webfont.woff2') format('woff2'),
+       url('/fonts/baronneue/baronneue-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+} // Regular
+
+@mixin Text {
+  font-feature-settings: "rlig" 1,"calt" 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: inherit;
+}
+
+@mixin Heading {
+  margin: 0;
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 600;
+  letter-spacing: -.05em;
+  color: inherit;
+
+  line-height: 1.6;
+}
+
+.BaronNeue {
+  font-family: 'baronneue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-transform: lowercase;
+  font-weight: 700;
+}
+
+.Heading1 {
+  @include Text;
+  @include Heading;
+
+  line-height: 1.2em;
+  font-size: 3.5rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 2.75rem;
+  }
+}
+
+.Heading2 {
+  @include Text;
+  @include Heading;
+
+  line-height: 1.2em;
+  font-size: 3rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 2.25rem;
+  }
+}
+
+.Heading3 {
+  @include Text;
+  @include Heading;
+  
+  line-height: 1.2em;
+  font-size: 2.5rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 1.75rem;
+  }
+}
+
+.Heading4 {
+  @include Text;
+  @include Heading;
+  
+  line-height: 1.41em;
+  font-size: 2rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 1.5rem;
+  }
+}
+
+.Heading5 {
+  @include Text;
+  @include Heading;
+  
+  line-height: 1.41em;
+  font-size: 1.5rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 1.25rem;
+  }
+}
+
+.Heading6 {
+  @include Text;
+  @include Heading;
+  
+  font-size: 1rem;
+  line-height: 1.75em;
+}
+
+.SHeading {
+  @include Text;
+  @include Heading;
+  
+  line-height: 1.6;
+  color: #888;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: -.02em;
+}
+
+.Small {
+  @include Text;
+  box-sizing: inherit;
+  line-height: 2.6em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 12px;
+  // letter-spacing: 0.16rem;
+  letter-spacing: .2rem;
+}
+
+.Paragraph {
+  @include Text;
+  letter-spacing: -.02em;
+  box-sizing: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.Anchor {
+  -webkit-tap-highlight-color: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition-property: color;
+  transition-duration: .1s;
+  transition-timing-function: ease;
+}
+
+.Blockquote {
+  @include Text;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: inherit;
+  line-height: 1.6;
+  letter-spacing: -.02em;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 1em;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  border-left-width: .25em;
+  border-left-style: solid;
+  &:first-child() {
+    margin-top: 0;
+  }
+  &:last-child() {
+    margin-bottom: 0;
+  }
+}
+
+.UList {
+  margin: 12px;
+  margin-left: 24px;
+  padding: 0;
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  list-style-type: none;
+  li.ListItem {
+    box-sizing: inherit;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    font-size: 1em;
+    line-height: 1.625em;
+    margin: 6px 0 0 39px;
+  }
+  li.ListItem::before {
+    content: '–';
+    color: #888888;
+    position: absolute;
+    margin-left: -15px;
+  }
+  li.ListItem:active,
+  li.ListItem:hover {
+    a {
+      color: #000000;
+    }
+  }
+}
