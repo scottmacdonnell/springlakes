@@ -16,7 +16,9 @@ const breakpoints = {
 export default function Box(props) {
   return (
     <div className={styles.BoxWrapper}>
-      <Container {...props} />
+      <Container {...props}>
+        {props.children}
+      </Container>
     </div>
   )
 }
@@ -58,11 +60,15 @@ export function BoxFlex({
   return (
     <>
       <MediaQuery minWidth={breakpoints.medium}>
-        <div className={styles.BoxFlex} style={desktopFlexStyles} children={children} />
+        <div className={styles.BoxFlex} style={desktopFlexStyles}>
+          {children}
+        </div>
       </MediaQuery>
 
       <MediaQuery maxWidth={breakpoints.medium}>
-        <div className={styles.BoxFlex} style={mobileFlexStyles} children={children} />
+        <div className={styles.BoxFlex} style={mobileFlexStyles}>
+          {children}
+        </div>
       </MediaQuery>
     </>
   )
@@ -104,11 +110,15 @@ export function BoxGrid({
   return (
     <>
       <MediaQuery minWidth={breakpoints.medium}>
-        <div className={styles.BoxGrid} style={desktopGridStyles} children={children} />
+        <div className={styles.BoxGrid} style={desktopGridStyles}>
+          {children}
+        </div>
       </MediaQuery>
 
       <MediaQuery maxWidth={breakpoints.medium}>
-        <div className={styles.BoxGrid} style={mobileGridStyles} children={children} />
+        <div className={styles.BoxGrid} style={mobileGridStyles}>
+          {children}
+        </div>
       </MediaQuery>
     </>
   )
