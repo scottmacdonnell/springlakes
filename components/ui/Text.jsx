@@ -68,13 +68,17 @@ export const Anchor = ({
         target="_blank" 
         rel="noopener noreferrer"
         className={styles.Anchor}
+        style={style}
       >
         {children}
       </a>
     </Link>
   ) : (
     <Link href={href}>
-      <a className={styles.Anchor}>
+      <a
+        className={styles.Anchor}
+        style={style}
+      >
         {children}
       </a>
     </Link>
