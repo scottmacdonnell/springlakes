@@ -1,0 +1,12 @@
+.Avatar {
+  display: flex;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.AvatarDisabled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
