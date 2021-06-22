@@ -1,0 +1,27 @@
+.SpinnerContainer {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Spinner {
+  @-webkit-keyframes spCircRot {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(359deg); }
+  }
+  @keyframes spCircRot {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+  }
+
+  display: inline;
+  width: 16px;
+  height: 16px;
+  clear: both;
+  margin: 10px auto;
+  border-radius: 50%;
+  -webkit-animation: spCircRot .6s infinite linear;
+  animation: spCircRot .6s infinite linear;
+}

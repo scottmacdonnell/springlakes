@@ -1,0 +1,16 @@
+@import '../../breakpoints';
+
+.BoxWrapper {
+  margin: 1rem 0;
+  padding: 2rem 0;
+}
+
+.BoxFlex {
+  display: flex;
+}
+
+.BoxGrid {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 2rem;
+}

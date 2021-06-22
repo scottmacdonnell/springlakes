@@ -1,0 +1,16 @@
+@import '../../breakpoints';
+
+.Container {
+  padding: 0;
+  max-width: $breakpointDesktop;
+  margin: 0 auto;
+  float: none;
+  @media only screen and (max-width: $breakpointMax) {
+    margin: 0 1rem;
+  }
+
+  // Preserve iPhone X Safe Area
+  @supports(padding: max(0px)) {
+    padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
+  }
+}
