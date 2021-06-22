@@ -1,0 +1,168 @@
+@import '../breakpoints';
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+.NavbarWrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  color: initial;
+  nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+      padding: 0px 0.5rem;
+    }
+  }
+}
+
+.Navbar {
+  display: grid;
+  grid-template-columns: auto 1fr 32px;
+  grid-template-rows: 1fr;
+  gap: 2rem;
+}
+
+.NavbarStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  svg {
+    color: inherit;
+    height: 6rem;
+  }
+}
+
+.NavbarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.NavbarEnd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Toggle {
+  display: block;
+  z-index: 999;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  .IconContainer {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    .Icon {
+      width: 20px;
+      height: 10px;
+      position: relative;
+      display: block;
+      margin: 3px auto;
+      top: 50%;
+      .TopBar {
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: relative;
+        background: #ffffff;
+        transition: all 0.3s $cubic;
+        transition-delay: 0s;
+        transform: translateY(0px) rotate(0deg);
+      }
+      .BtmBar {
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: relative;
+        background: #ffffff;
+        transition: all 0.3s $cubic;
+        transition-delay: 0s;
+        transform: translateY(8px) rotate(0deg);
+      }
+    }
+  }
+}
+
+.ToggleActive {
+  position: fixed;
+  .IconContainer {
+    transform: rotate(90deg);
+    .Icon {
+      .TopBar {
+        background: #ffffff;
+        transition: all 0.4s $cubic;
+        transition-delay: 0.2s;
+        transform: translateY(6px) rotate(45deg);
+      }
+      .BtmBar {
+        background: #ffffff;
+        transition: all 0.4s $cubic;
+        transition-delay: 0.2s;
+        transform: translateY(5px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.MobileNav {
+  display: hidden;
+  position: relative;
+  width: 100%;
+  height: 0vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0%;
+  z-index: 888;
+  transition-delay: 0.2s;
+  transition: opacity 0.25s ease;
+  .MobileContainer {
+    display: hidden;
+    opacity: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba($color: #000000, $alpha: 0.85);
+    color: #fafafa;
+    .MobileWrapper {
+      display: hidden;
+      max-width: $breakpointDesktop;
+      margin: 0 1rem;
+      padding: 1rem 0;
+      float: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.MobileNavActive {
+  display: block;
+  height: 100vh;
+  opacity: 100%;
+  transition-delay: 0.2s;
+  transition: opacity 0.25s ease;
+  .MobileContainer {
+    opacity: 100%;
+  }
+}
