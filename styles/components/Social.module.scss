@@ -1,0 +1,48 @@
+.Social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0.75em;
+
+  a {
+    display: flex;
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.Facebook {
+  a {
+    color: currentColor;
+  }
+
+  a:active,
+  a:hover {
+    color: #1877f2;
+  }
+}
+
+.Twitter {
+  a {
+    color: currentColor;
+  }
+
+  a:active,
+  a:hover {
+    color: #08A0E9;
+  }
+}
+
+.Instagram {
+  a {
+    color: currentColor;
+  }
+
+  a:active,
+  a:hover {
+    color: #DD2A7B;
+  }
+}
