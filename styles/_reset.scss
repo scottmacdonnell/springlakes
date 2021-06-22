@@ -3,7 +3,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  -ms-overflow-style: none;
 }
 
 /* Remove default padding */
@@ -32,6 +31,7 @@ dd {
 
 /* Set core body defaults */
 body {
+  margin: 0;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -45,12 +45,14 @@ ol[class] {
 }
 
 /* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Remove default anchor tag styling */
 a {
   color: inherit;
   text-decoration: none;
-}
-a:not([class]) {
-  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -63,11 +65,6 @@ img {
 article > * + * {
   margin-top: 1em;
 }
-
-// button {
-//   min-height: 48px;
-//   min-width: 48px;
-// }
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -85,4 +82,19 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Fix 100vh issue */
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+/* Remove scrollbar */
+*::-webkit-scrollbar {
+  display: none;
 }
